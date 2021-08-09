@@ -26,8 +26,11 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + "/public"));
 app.use("/public", express.static(__dirname + "/public"));
 
-var routes = require("./routes/journalsRoutes"); //importing route
+const routes = require("./routes/journalsRoutes"); //importing route
 routes(app); //register the route
+
+const contactRoutes = require("./routes/contactRoutes");
+contactRoutes(app);
 
 app.listen(port);
 
