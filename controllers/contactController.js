@@ -38,7 +38,7 @@ exports.send_email = async function (req, res) {
   let mailOptions = {
     from: process.env.MAIL_USERNAME,
     to: "essidmohamedamin@gmail.com",
-    subject: "Nodemailer Project",
+    subject: "Buy",
     text: "Hi from your nodemailer project",
     html: `
     <b>firstName: ${firstName}</b><br/>
@@ -89,7 +89,7 @@ exports.send_offer = async function (req, res) {
   let mailOptions = {
     from: process.env.MAIL_USERNAME,
     to: "essidmohamedamin@gmail.com",
-    subject: "Nodemailer Project",
+    subject: "Sell",
     text: "Hi from your nodemailer project",
     html: `
     <b>firstName: ${firstName}</b><br/>
