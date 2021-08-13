@@ -31,7 +31,7 @@ exports.send_email = async function (req, res) {
   files.forEach((file) => {
     mapedFiles =
       mapedFiles +
-      `<b>fileName: ${file.title}, author: ${file.author}</b><br/> `;
+      `<b>fileName: ${file.title}, author: ${file.author}, ref: ${file._id}, price: ${file.price}</b><br/> `;
   });
   console.log(mapedFiles);
 
