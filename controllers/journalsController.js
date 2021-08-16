@@ -9,7 +9,7 @@ exports.list_all_journals = function (req, res) {
       console.log(err);
       res.send(err);
     }
-    console.log(journal);
+    // console.log(journal);
     res.json(journal);
   });
 };
