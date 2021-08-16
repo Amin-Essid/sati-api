@@ -55,40 +55,6 @@ const JournalsSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  // types: {
-  //   types: [
-  //     {
-  //       type: String,
-  //       enum: [
-  //         "journal",
-  //         "dafterTakyim",
-  //         "korasJouthathet",
-  //         "korasTanaweb",
-  //         "package",
-  //         "other",
-  //       ],
-  //     },
-  //   ],
-  //   default: ["journal"],
-  // },
-  // levels: {
-  //   levels: [
-  //     {
-  //       type: String,
-  //       enum: ["all", "zero", "one", "two", "three", "four", "five", "six"],
-  //     },
-  //   ],
-  //   default: ["all"],
-  // },
-  // subjects: {
-  //   subjects: [
-  //     {
-  //       type: String,
-  //       enum: ["arabic", "frensh", "science", "other"],
-  //     },
-  //   ],
-  //   default: ["arabic"],
-  // },
   order: {
     type: Number,
     required: "Kindly enter the name of the number",

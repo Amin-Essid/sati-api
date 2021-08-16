@@ -1,3 +1,4 @@
+require("dotenv").config();
 var express = require("express"),
   app = express(),
   port = process.env.PORT || 5000,
@@ -13,12 +14,21 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+// const connectToDatabase = async () => {
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/SatiDB", {
+// mongoose.connect("mongodb://localhost:27017/SatiDB", {
+// const client = await
+mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  tls: true,
+  tlsCAFile: "./certificate.crt",
 });
+
+const dbConnection = mongoose.connection;
+dbConnection.on("error", (err) => console.log(`Connection error ${err}`));
+dbConnection.once("open", () => console.log("Connected to DB!"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

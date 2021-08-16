@@ -5,7 +5,11 @@ const mongoose = require("mongoose"),
 
 exports.list_all_journals = function (req, res) {
   Journal.find({}, function (err, journal) {
-    if (err) res.send(err);
+    if (err) {
+      console.log(err);
+      res.send(err);
+    }
+    console.log(journal);
     res.json(journal);
   });
 };
